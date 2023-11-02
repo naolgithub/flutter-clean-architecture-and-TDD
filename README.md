@@ -1,1 +1,1 @@
-# weather-app-using-flutter-clean-architecture-and-TDD
+# flutter-clean-architecture-and-TDD
