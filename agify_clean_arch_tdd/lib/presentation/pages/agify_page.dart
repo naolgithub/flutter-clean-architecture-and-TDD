@@ -5,9 +5,16 @@ import '../bloc/agify_bloc.dart';
 import '../bloc/agify_event.dart';
 import '../bloc/agify_state.dart';
 
-class AgifyPage extends StatelessWidget {
+class AgifyPage extends StatefulWidget {
   const AgifyPage({super.key});
 
+  @override
+  State<AgifyPage> createState() => _AgifyPageState();
+}
+
+class _AgifyPageState extends State<AgifyPage> {
+  final contoller = TextEditingController();
+  late String inputStr;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,6 +32,7 @@ class AgifyPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             TextField(
+              controller: contoller,
               textAlign: TextAlign.center,
               decoration: InputDecoration(
                 hintText: 'Enter agified name',
@@ -40,7 +48,12 @@ class AgifyPage extends StatelessWidget {
                 ),
               ),
               onChanged: (query) {
+                inputStr = query;
                 context.read<AgifyBloc>().add(OnNameChanged(query));
+              },
+              onSubmitted: (query) {
+                // context.read<AgifyBloc>().add(OnNameChanged(query));
+                contoller.text.isNotEmpty ? addWeather() : null;
               },
             ),
             const SizedBox(height: 32.0),
@@ -194,5 +207,10 @@ class AgifyPage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void addWeather() {
+    contoller.clear();
+    BlocProvider.of<AgifyBloc>(context).add(OnNameChanged(inputStr));
   }
 }

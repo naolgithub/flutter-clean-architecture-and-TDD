@@ -43,6 +43,10 @@ dependencies:
   path: ^1.8.3
   path_provider: ^2.1.1
   rxdart: ^0.27.7
+  shared_preferences: ^2.2.2
+  data_connection_checker_nulls: ^0.0.2
+  internet_connection_checker: ^1.0.0+1
+  internet_connection_checker_plus: ^2.1.0
 
 dev_dependencies:
   flutter_test:

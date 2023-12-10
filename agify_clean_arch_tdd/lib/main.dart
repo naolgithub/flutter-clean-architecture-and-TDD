@@ -5,8 +5,9 @@ import 'injection_container.dart';
 import 'presentation/bloc/agify_bloc.dart';
 import 'presentation/pages/agify_page.dart';
 
-void main() {
-  setUpLocator();
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await setUpLocator();
   runApp(const MyApp());
 }
 
