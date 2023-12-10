@@ -6,7 +6,7 @@ import 'package:weather_clean_architecture_tdd/domain/repository/weather_reposit
 import 'package:weather_clean_architecture_tdd/domain/usecases/get_current_weather.dart';
 import 'package:weather_clean_architecture_tdd/presentation/bloc/weather_bloc.dart';
 
-//implementation of dependency injection
+//implementation of dependency injection using get_it package
 final locator = GetIt.instance;
 void setUpLocator() {
   //registering bloc

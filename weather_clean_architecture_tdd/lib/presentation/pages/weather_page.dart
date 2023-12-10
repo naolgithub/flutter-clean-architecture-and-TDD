@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:weather_clean_architecture_tdd/core/constants/constants.dart';
 import 'package:weather_clean_architecture_tdd/presentation/bloc/weather_bloc.dart';
 import 'package:weather_clean_architecture_tdd/presentation/bloc/weather_event.dart';
 
+import '../../core/constants/constants.dart';
 import '../bloc/weather_state.dart';
 
 class WeatherPage extends StatelessWidget {

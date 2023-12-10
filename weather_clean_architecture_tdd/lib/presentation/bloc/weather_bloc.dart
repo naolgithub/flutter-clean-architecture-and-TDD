@@ -7,7 +7,9 @@ import 'package:weather_clean_architecture_tdd/presentation/bloc/weather_state.d
 
 class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
   final GetCurrentWeatherUseCase _getCurrentWeatherUseCase;
-  WeatherBloc(this._getCurrentWeatherUseCase) : super(WeatherEmpty()) {
+  WeatherBloc(
+    this._getCurrentWeatherUseCase,
+  ) : super(WeatherEmpty()) {
     on<OnCityChanged>(
       (event, emit) async {
         emit(WeatherLoading());
